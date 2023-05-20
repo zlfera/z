@@ -1,6 +1,8 @@
 <template>
     <div>
         <p>这是采购页面</p>
+        <SearchAdd />
+        <MyForm />
         <MyTable />
     </div>
 </template>

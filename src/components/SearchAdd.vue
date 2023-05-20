@@ -5,7 +5,7 @@
 
             <el-button type="primary" @click="search">搜索</el-button>
             <el-button type="success" @click="dialogFormVisible = !dialogFormVisible">新增</el-button>
-            {{ dialogFormVisible }}
+
         </el-row>
     </div>
 </template>
