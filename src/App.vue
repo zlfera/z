@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import {  RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 
 </script>
 
 <template>
-  <RouterView/>
+  <div id="se">
+    <RouterView />
+  </div>
 </template>
 
-<style scoped >
+<style  >
+#se,
+body,
+html {
+  background-color: #ff770f;
+}
+
 /* header {
   line-height: 1.5;
   max-height: 100vh;

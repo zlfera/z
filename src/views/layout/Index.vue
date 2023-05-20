@@ -18,6 +18,10 @@
 import LayoutNav from './components/LayoutNav.vue';
 import LayoutHeader from './components/LayoutHeader.vue'
 import LayoutFooter from './components/LayoutFooter.vue';
+import { ref, type Ref } from 'vue';
+import { provide } from 'vue';
+const dialogFormVisible: Ref<boolean> = ref<boolean>(false)
+provide('dialogFormVisible', dialogFormVisible)
 </script>
 
 <style  >
