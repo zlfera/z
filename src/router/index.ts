@@ -5,7 +5,7 @@ import BaoBiao from "../views/baoBiao/Index.vue";
 import CaiGou from "@/views/caiGou/Index.vue";
 import JianYan from "@/views/jianYan/Index.vue";
 import GuoBang from "@/views/guoBang/Index.vue";
-import RuKu from "@/views/ruku/Index.vue";
+import RuKu from "@/views/ruKu/Index.vue";
 import ChuKu from "@/views/chuKu/Index.vue";
 import ShengChan from "@/views/shengChan/Index.vue";
 import DaBao from "@/views/daBao/Index.vue";
