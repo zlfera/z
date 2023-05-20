@@ -2,16 +2,13 @@
     <div>
         <p>这是保养页面</p>
         <SearchAdd />
+        <MyForm />
         <MyTable />
     </div>
 </template>
 
 <script lang="ts" setup>
-import type MyTable from '@/components/MyTable.vue';
-import { inject } from 'vue';
 import { provide } from 'vue';
-const dialogFormVisible = inject('dialogFormVisible')
-provide('dialogFormVisible', dialogFormVisible)
 provide('dynamicColumns', { date: '日期', name: '姓名', address: '地址', z: 'z' })
 provide('tableData', [
     {
