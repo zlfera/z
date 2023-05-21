@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>这是打包页面</p>
+    <p>这是入库页面</p>
     <SearchAdd />
     <MyForm />
     <MyTable />
@@ -57,4 +57,3 @@ provide("tableData", [
 </script>
 
 <style scoped></style>
-

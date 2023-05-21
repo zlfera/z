@@ -59,6 +59,10 @@ const router = createRouter({
           path: "/baoyang",
           component: BaoYang,
         },
+        {
+          path: "/wuliao",
+          component: () => import("@/views/wuLiao/Index.vue"),
+        },
       ],
     },
     {
