@@ -4,7 +4,6 @@
       ref="ruleFormRef"
       :model="ruleForm"
       :rules="rules"
-      label-width="120px"
       class="demo-ruleForm"
       :size="formSize"
       status-icon
@@ -201,4 +200,3 @@ const options = Array.from({ length: 10000 }).map((_, idx) => ({
   margin-right: 10px;
 }
 </style>
-
