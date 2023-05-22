@@ -1,8 +1,5 @@
 <template>
   <el-table :data="tableData" height="100%" style="width: 100%" stripe>
-    <el-table-column prop="date" label="Date" width="180" />
-    <el-table-column prop="name" label="name" width="180" />
-    <el-table-column prop="address" label="Address" />
     <el-table-column
       v-for="(value, key) in dynamicColumns"
       :label="value"
@@ -22,4 +19,3 @@ const tableData = inject("tableData");
 </script>
 
 <style scoped></style>
-

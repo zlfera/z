@@ -12,46 +12,51 @@ import { provide, ref, type Ref } from "vue";
 const dialogFormVisible: Ref<boolean> = ref<boolean>(false);
 provide("dialogFormVisible", dialogFormVisible);
 provide("dynamicColumns", {
-  date: "日期",
-  name: "姓名",
-  address: "地址",
-  z: "z",
+  id: "物料编号",
+  name: "物料名称",
+  batch: "批次",
+  year: "年",
+  spec: "规格",
+  unit: "单位",
+  num: "数量",
+  remark: "备注",
+  type: "类型",
 });
 provide("tableData", [
   {
-    date: "2016-05-03",
+    id: "2016-05-03",
     name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
+    batch: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: "2016-05-02",
+    id: "2016-05-02",
     name: "Tomd",
-    address: "No. 189, Grove St, Los Angeles",
+    baych: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: "2016-05-04",
+    id: "2016-05-04",
     name: "Tomdd",
-    address: "No. 189, Grove St, Los Angeles",
+    batch: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: "2016-05-01",
+    id: "2016-05-01",
     name: "Tomfds",
-    address: "No. 189, Grove St, Los Angeles",
+    batch: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: "2016-05-08",
+    id: "2016-05-08",
     name: "Tomdfd",
-    address: "No. 189, Grove St, Los Angeles",
+    batch: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: "2016-05-06",
+    id: "2016-05-06",
     name: "Tomwrfd",
-    address: "No. 189, Grove St, Los Angeles",
+    batch: "No. 189, Grove St, Los Angeles",
   },
   {
-    date: "2016-05-07",
+    id: "2016-05-07",
     name: "Tomdfdd",
-    address: "No. 189, Grove St, Los Angeles",
+    batch: "No. 189, Grove St, Los Angeles",
   },
 ]);
 </script>
