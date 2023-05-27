@@ -5,42 +5,26 @@
         <el-input v-model="ruleForm.supplierName" />
       </el-form-item>
 
-      <el-form-item label="Activity time" required>
+      <el-form-item label="供应商电话" required>
         <el-col :span="11">
-          <el-form-item prop="date1">
-            <el-date-picker v-model="ruleForm.date1" type="date" label="Pick a date" placeholder="Pick a date"
-              style="width: 100%" />
-          </el-form-item>
-        </el-col>
-        <el-col class="text-center" :span="2">
-          <span class="text-gray-500">-</span>
-        </el-col>
-        <el-col :span="11">
-          <el-form-item prop="date2">
-            <el-time-picker v-model="ruleForm.date2" label="Pick a time" placeholder="Pick a time" style="width: 100%" />
+          <el-form-item prop="phone">
+            <el-input v-model="ruleForm.phone" label="电话" />
           </el-form-item>
         </el-col>
       </el-form-item>
-      <el-form-item label="Instant delivery" prop="delivery">
-        <el-switch v-model="ruleForm.delivery" />
+
+      <el-col class="text-center" :span="2">
+        <span class="text-gray-500">-</span>
+      </el-col>
+      <el-form-item>
+        <el-col :span="11">
+          <el-form-item prop="address">
+            <el-input v-model="ruleForm.address" label="地址" style="width: 100%" />
+          </el-form-item>
+        </el-col>
       </el-form-item>
-      <el-form-item label="Activity type" prop="type">
-        <el-checkbox-group v-model="ruleForm.type">
-          <el-checkbox label="Online activities" name="type" />
-          <el-checkbox label="Promotion activities" name="type" />
-          <el-checkbox label="Offline activities" name="type" />
-          <el-checkbox label="Simple brand exposure" name="type" />
-        </el-checkbox-group>
-      </el-form-item>
-      <el-form-item label="Resources" prop="resource">
-        <el-radio-group v-model="ruleForm.resource">
-          <el-radio label="Sponsorship" />
-          <el-radio label="Venue" />
-        </el-radio-group>
-      </el-form-item>
-      <el-form-item label="Activity form" prop="desc">
-        <el-input v-model="ruleForm.desc" type="textarea" />
-      </el-form-item>
+
+
       <el-form-item>
         <el-button type="primary" @click="submitForm(ruleFormRef)">
           Create
