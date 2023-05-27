@@ -6,6 +6,12 @@
           <RouterLink to="/">报表记录</RouterLink>
         </li>
         <li>
+          <RouterLink to="/gongyingshang">供应商记录</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/kehu">客户记录</RouterLink>
+        </li>
+        <li>
           <RouterLink to="/wuliao">物料信息</RouterLink>
         </li>
 

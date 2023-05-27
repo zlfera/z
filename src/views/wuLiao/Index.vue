@@ -14,8 +14,7 @@ provide("dialogFormVisible", dialogFormVisible);
 provide("dynamicColumns", {
   id: "物料编号",
   name: "物料名称",
-  batch: "批次",
-  year: "年",
+  year: "年份",
   spec: "规格",
   unit: "单位",
   num: "数量",

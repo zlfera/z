@@ -63,6 +63,14 @@ const router = createRouter({
           path: "/wuliao",
           component: () => import("@/views/wuLiao/Index.vue"),
         },
+        {
+          path: "/gongyingshang",
+          component: () => import("@/views/gongYingShang/Index.vue"),
+        },
+        {
+          path: "/kehu",
+          component: () => import("@/views/keHu/Index.vue"),
+        },
       ],
     },
     {
