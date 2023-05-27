@@ -1,45 +1,58 @@
 <template>
-  <el-dialog v-model="dialogFormVisible" title="Shipping address">
-    <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" class="demo-ruleForm" :size="formSize" status-icon>
-      <el-form-item label="供应商名称" prop="supplierName">
-        <el-input v-model="ruleForm.supplierName" />
-      </el-form-item>
-
-      <el-form-item label="供应商电话" required>
+  <el-dialog v-model="dialogFormVisible" width="80%" title="Shipping address">
+    <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" class="demo-ruleForm" status-icon>
+      <el-row>
         <el-col :span="11">
-          <el-form-item prop="phone">
-            <el-input v-model="ruleForm.phone" label="电话" />
+          <el-form-item label="供应商名称" prop="supplierName">
+            <el-input v-model="ruleForm.supplierName" />
           </el-form-item>
         </el-col>
-      </el-form-item>
-
-      <el-col class="text-center" :span="2">
-        <span class="text-gray-500">-</span>
-      </el-col>
-      <el-form-item>
+        <el-col :span="2"></el-col>
         <el-col :span="11">
-          <el-form-item prop="address">
-            <el-input v-model="ruleForm.address" label="地址" style="width: 100%" />
+          <el-form-item label="供应商名称" prop="supplierName">
+            <el-input v-model="ruleForm.supplierName" />
           </el-form-item>
         </el-col>
-      </el-form-item>
+      </el-row>
+      <el-row>
+        <el-col :span="11">
+          <el-form-item label="供应商名称" prop="supplierName">
+            <el-input v-model="ruleForm.supplierName" />
+          </el-form-item>
+        </el-col>
+        <el-col :span="2"></el-col>
+        <el-col :span="11">
+          <el-form-item label="供应商名称" prop="supplierName">
+            <el-input v-model="ruleForm.supplierName" />
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="11">
+          <el-form-item label="供应商名称" prop="supplierName">
+            <el-input v-model="ruleForm.supplierName" />
+          </el-form-item>
+        </el-col>
+        <el-col :span="2"></el-col>
+        <el-col :span="11">
+          <el-form-item label="供应商名称" prop="supplierName">
+            <el-input v-model="ruleForm.supplierName" />
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="24">
+          <el-form-item label="供应商名称" prop="supplierName">
+            <el-input v-model="ruleForm.supplierName" />
+          </el-form-item>
+        </el-col>
+      </el-row>
 
-
-      <el-form-item>
-        <el-button type="primary" @click="submitForm(ruleFormRef)">
-          Create
-        </el-button>
-        <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
+      <el-form-item class="center">
+        <el-button type="primary" @click="onSubmit">Create</el-button>
+        <el-button>Cancel</el-button>
       </el-form-item>
     </el-form>
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">
-          Confirm
-        </el-button>
-      </span>
-    </template>
   </el-dialog>
 </template>
 
@@ -48,7 +61,6 @@ import { reactive, ref } from "vue";
 import type { FormInstance, FormRules } from "element-plus";
 import { inject } from "vue";
 const dialogFormVisible = inject("dialogFormVisible");
-const formSize = ref("default");
 const ruleFormRef = ref<FormInstance>();
 const ruleForm = reactive({
   supplierName: "Hello",
@@ -56,8 +68,7 @@ const ruleForm = reactive({
   phone: "",
   address: "",
   supplierStatus: "",
-  remarks: '',
-
+  remarks: "",
 });
 
 const rules = reactive<FormRules>({
@@ -81,7 +92,6 @@ const rules = reactive<FormRules>({
   ],
   address: [
     {
-
       required: true,
       message: "Please pick a date",
       trigger: "change",
@@ -89,7 +99,6 @@ const rules = reactive<FormRules>({
   ],
   supplierStatus: [
     {
-
       required: true,
       message: "Please pick a time",
       trigger: "change",
@@ -97,15 +106,14 @@ const rules = reactive<FormRules>({
   ],
   remarks: [
     {
-
       required: true,
       message: "Please select at least one activity type",
       trigger: "change",
     },
-  ]
+  ],
 });
 
-const submitForm = async (formEl: FormInstance | undefined) => {
+const onSubmit = async (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   await formEl.validate((valid, fields) => {
     if (valid) {
@@ -115,28 +123,16 @@ const submitForm = async (formEl: FormInstance | undefined) => {
     }
   });
 };
-
-const resetForm = (formEl: FormInstance | undefined) => {
-  if (!formEl) return;
-  formEl.resetFields();
-};
-
-const options = Array.from({ length: 10000 }).map((_, idx) => ({
-  value: `${idx + 1}`,
-  label: `${idx + 1}`,
-}));
 </script>
-<style>
+<style scoped>
+.center {
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .el-button--text {
   margin-right: 15px;
-}
-
-.el-select {
-  width: 300px;
-}
-
-.el-input {
-  width: 300px;
 }
 
 .dialog-footer button:first-child {
