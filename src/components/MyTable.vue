@@ -8,10 +8,13 @@
     </el-table-column>
 
 
+
     <el-table-column width="250">
-      <el-button type="primary">编辑</el-button>
-      <el-button type="success">打印</el-button>
-      <el-button type="danger">删除</el-button>
+      <template #default="scope">
+        <el-button type="primary">编辑</el-button>
+        <el-button type="success">打印</el-button>
+        <el-button type="danger">删除</el-button>
+      </template>
     </el-table-column>
 
   </el-table>
