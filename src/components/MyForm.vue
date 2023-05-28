@@ -1,5 +1,5 @@
 <template>
-  <el-dialog v-model="dialogFormVisible" width="80%" title="Shipping address">
+  <el-dialog v-model="dialogFormVisible" width="80%" title="添加供应商">
     <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" class="demo-ruleForm" status-icon>
       <el-row>
         <el-col :span="11">
@@ -9,48 +9,50 @@
         </el-col>
         <el-col :span="2"></el-col>
         <el-col :span="11">
-          <el-form-item label="供应商名称" prop="supplierName">
-            <el-input v-model="ruleForm.supplierName" />
+          <el-form-item label="供应商分类" prop="supplierClassification">
+            <el-input v-model="ruleForm.supplierClassification" />
+          </el-form-item>
+        </el-col>
+
+      </el-row>
+      <el-row>
+        <el-col :span="11">
+          <el-form-item label="供应商电话" prop="phone" class="label">
+            <el-input v-model="ruleForm.phone" />
+          </el-form-item>
+        </el-col>
+        <el-col :span="2"></el-col>
+        <el-col :span="11">
+          <el-form-item label="供应商地址" prop="address">
+            <el-input v-model="ruleForm.address" />
           </el-form-item>
         </el-col>
       </el-row>
       <el-row>
         <el-col :span="11">
-          <el-form-item label="供应商名称" prop="supplierName">
-            <el-input v-model="ruleForm.supplierName" />
+          <el-form-item label="供应商状态" prop="supplierStatus">
+            <el-input v-model="ruleForm.supplierStatus" />
           </el-form-item>
         </el-col>
         <el-col :span="2"></el-col>
         <el-col :span="11">
-          <el-form-item label="供应商名称" prop="supplierName">
-            <el-input v-model="ruleForm.supplierName" />
+          <el-form-item label="供应商等级" prop="level">
+            <el-input v-model="ruleForm.level" />
           </el-form-item>
         </el-col>
-      </el-row>
-      <el-row>
-        <el-col :span="11">
-          <el-form-item label="供应商名称" prop="supplierName">
-            <el-input v-model="ruleForm.supplierName" />
-          </el-form-item>
-        </el-col>
-        <el-col :span="2"></el-col>
-        <el-col :span="11">
-          <el-form-item label="供应商名称" prop="supplierName">
-            <el-input v-model="ruleForm.supplierName" />
-          </el-form-item>
-        </el-col>
+
       </el-row>
       <el-row>
         <el-col :span="24">
-          <el-form-item label="供应商名称" prop="supplierName">
+          <el-form-item label="供应商备注" prop="supplierName">
             <el-input v-model="ruleForm.supplierName" />
           </el-form-item>
         </el-col>
       </el-row>
 
       <el-form-item class="center">
-        <el-button type="primary" @click="onSubmit">Create</el-button>
-        <el-button>Cancel</el-button>
+        <el-button>取消</el-button>
+        <el-button type="primary" @click="onSubmit">创建</el-button>
       </el-form-item>
     </el-form>
   </el-dialog>
@@ -68,6 +70,7 @@ const ruleForm = reactive({
   phone: "",
   address: "",
   supplierStatus: "",
+  level: '',
   remarks: "",
 });
 
@@ -104,6 +107,13 @@ const rules = reactive<FormRules>({
       trigger: "change",
     },
   ],
+  level: [
+    {
+      required: true,
+      message: "Please select at least one activity type",
+      trigger: "change",
+    },
+  ],
   remarks: [
     {
       required: true,
@@ -125,6 +135,10 @@ const onSubmit = async (formEl: FormInstance | undefined) => {
 };
 </script>
 <style scoped>
+.label {
+  text-align: center;
+}
+
 .center {
   justify-items: center;
   justify-content: center;

@@ -18,6 +18,7 @@ provide("dynamicColumns", {
     phone: '电话',
     address: '地址',
     supplierStatus: '供应商状态',
+    level: '供应商等级',
     remarks: '备注',
 
 })
